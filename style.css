@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+  
+  
+  * {
+        box-sizing: border-box;
+    }
+
+body {
+        margin: 0;
+        overflow: auto;
+        background: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+   html {
+       font-family:'Malgun Gothic', sans-serif;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: 300%;
+        text-align: center;
+        border-bottom: 1px solid white;
+        margin: 0;
+        padding: 20px;
+        background-color: whitesmoke;
+    }
+
+    ul {
+        border-right: 1px solid whitesmoke;
+        width: 100px;
+        margin: 0;
+        padding: 40px;
+    }
+
+    #grid {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+    }
+
+    #grid ul {
+        padding-left: 33px;
+    }
+
+    #grid #article {
+        padding-left: 25px;
+        margin:30px;
+    }
+
+    @media(max-width:800px) {
+        #grid {
+            display: block;
+        }
+        ul {
+            border-right: none;
+        }
+        h1 {
+            border-bottom: none;
+        }
+    }
+    
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+    
+   
+
