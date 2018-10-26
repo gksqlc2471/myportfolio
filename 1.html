@@ -3,56 +3,114 @@
 
 <head>
     <title>About me</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon (2).ico" />
     <link rel="stylesheet" href="style.css">
 
 </head>
 <style>
-    .container {
-        position: relative;
-        width: 50%;
+    * {
+        box-sizing: border-box
     }
 
-    .image {
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    /* Style the tab */
+    .tab {
+        float: left;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        width: 30%;
+        height: 300px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
         display: block;
-        width: 50%;
-        height: auto;
-    }
-
-    .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgb(75, 210, 255);
-        overflow: hidden;
-        width: 50%;
-        height: 100%;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
-        -webkit-transition: .3s ease;
-        transition: .3s ease;
-    }
-
-    .container:hover .overlay {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
-
-    .text {
-        color: white;
-        font-size: 15px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+        background-color: inherit;
+        color: black;
+        padding: 22px 16px;
+        width: 100%;
+        border: none;
+        outline: none;
         text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 17px;
     }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current "tab button" class */
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        float: left;
+        padding: 0px 12px;
+        border: 1px solid #ccc;
+        width: 70%;
+        border-left: none;
+        height: 300px;
+    }
+
+body {
+font-family: Verdana, sans-serif;
+margin: 0
+}
+
+.container {
+position: relative;
+width: 50%;
+}
+
+.image {
+display: block;
+width: 50%;
+height: auto;
+}
+
+.overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgb(75, 210, 255);
+overflow: hidden;
+width: 50%;
+height: 100%;
+-webkit-transform: scale(0);
+-ms-transform: scale(0);
+transform: scale(0);
+-webkit-transition: .3s ease;
+transition: .3s ease;
+}
+
+.container:hover .overlay {
+-webkit-transform: scale(1);
+-ms-transform: scale(1);
+transform: scale(1);
+}
+
+.text {
+color: white;
+font-size: 15px;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+text-align: left;
+}
 </style>
 
 
@@ -84,37 +142,57 @@
                 <a href="4.html">Project</a>
             </li>
             <br>
+            <li>
+                <a href="info.html">Info</a>
+            </li>
+
 
         </ul>
         <div id="article">
             <h2>About me</h2>
-            <div class="container">
-                <img src=" 1818.jpg" alt="Avatar" class="image">
-                <div class="overlay">
-                    <div class="text">
-                        공한빛
-                        <br> 나이 :25
-                        <br> 연락처 : 010-9104-2471
-                        <br> email: gksqlc2471@naver.com
-                        <br> insta:vvgpwt127
 
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="container">
-                <img src="이미지 13 (2).jpg" alt="Avatar" class="image">
-                <div class="overlay">
-                    <div class="text">
-                        출신대학:
-                        <br> 전주기전대학교
-                        <br> 전공학과:
-                        <br> 패션디자인
-                        <br>
+            <p>Click on the buttons inside the tabbed menu:</p>
 
-                    </div>
-                </div>
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
             </div>
+
+            <div id="London" class="tabcontent">
+                <h3>London</h3>
+                <p>London is the capital city of England.</p>
+            </div>
+
+            <div id="Paris" class="tabcontent">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Tokyo" class="tabcontent">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <script>
+                function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+
+                // Get the element with id="defaultOpen" and click on it
+                document.getElementById("defaultOpen").click();
+            </script>
+
 
 
         </div>
