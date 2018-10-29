@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="style.css">
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                <link rel="shortcut icon" href="favicon (2).ico" />
+                <title>project</title>
+            
+            </head>
+<body>
+    <h2>project</h2>
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="d1.jpg" style="width:100%">
+        <img class="mySlides" src="d2.jpg" style="width:100%">
+        <img class="mySlides" src="d3.jpg" style="width:100%">
+        <img class="mySlides" src="d4.jpg" style="width:100%">
+        <img class="mySlides" src="d5.jpg" style="width:100%">
+        <img class="mySlides" src="d6.jpg" style="width:100%">
+        <img class="mySlides" src="d7.jpg" style="width:100%">
+        <img class="mySlides" src="d8.jpg" style="width:100%">
+        <img class="mySlides" src="d9.jpg" style="width:100%">
+        <img class="mySlides" src="d10.jpg" style="width:100%">
+        <img class="mySlides" src="d11.jpg" style="width:100%">
+        <img class="mySlides" src="d12.jpg" style="width:100%">
+        <img class="mySlides" src="d13.jpg" style="width:100%">
+        <img class="mySlides" src="d14.jpg" style="width:100%">
+        <img class="mySlides" src="d15.jpg" style="width:100%">
+        <img class="mySlides" src="d16.jpg" style="width:100%">
+        <img class="mySlides" src="d17.jpg" style="width:100%">
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+
+</body>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</html>

@@ -3,6 +3,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon (2).ico" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calc-flex.css">
     <style>
         * {
             box-sizing: border-box;
@@ -24,58 +28,133 @@
         h1 {
             font-size: 50px;
             word-break: break-all;
-            color:hsl(12, 92%, 49%);
-        }
-        h2{
-            color:hsl(12, 92%, 49%);
+            color: hsl(12, 92%, 49%);
         }
 
-        .row {
-            margin: 8px -16px;
+        h2 {
+            color: hsl(12, 92%, 49%);
         }
 
-        /* Add padding BETWEEN each column */
-
-        .row,
-        .row>.column {
-            padding: 8px;
+        img {
+            vertical-align: middle;
         }
 
-        /* Create four equal columns that floats next to each other */
+        /* Slideshow container */
 
-        .column {
-            float: left;
-            width: 25%;
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
         }
 
-        /* Clear floats after rows */
+        /* Next & previous buttons */
 
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: rgb(53, 53, 53);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
         }
 
-        /* Content */
+        /* Position the "next button" to the right */
 
-        .content {
-            background-color: white;
-            padding: 10px;
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
         }
 
-        /* Responsive layout - makes a two column-layout instead of four columns */
+        /* On hover, add a black background color with a little bit see-through */
 
-        @media screen and (max-width: 900px) {
-            .column {
-                width: 50%;
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 30%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
             }
         }
 
-        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
 
-        @media screen and (max-width: 600px) {
-            .column {
-                width: 100%;
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+
+        @media only screen and (max-width: 300px) {
+
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
             }
         }
     </style>
@@ -86,7 +165,7 @@
     <!-- MAIN (Center website) -->
     <div class="main">
         <a href="index.html">
-        <img src="123.jpg" width="50%" alt="myportfolio">
+            <img src="123.jpg" width="50%" alt="myportfolio">
         </a>
         <hr>
 
@@ -94,59 +173,104 @@
         <h2>motive</h2>
 
         <!-- Portfolio Gallery Grid -->
-        <div class="row">
-            <div class="column">
-                <div class="content">
-                    <img src="c11.jpg" alt="Mountains" style="width:100%">
-                    <h3>vintage</h3>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat
-                        nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <img src="c12.jpg" alt="Lights" style="width:100%">
-                    <h3>unique</h3>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat
-                        nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <img src="c13.jpg" alt="Nature" style="width:100%">
-                    <h3>popular</h3>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat
-                        nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-            </div>
-            <div class="column">
-                <div class="content">
-                    <img src="c14.jpg" alt="Mountains" style="width:100%">
-                    <h3>artistic</h3>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat
-                        nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-            </div>
-            <!-- END GRID -->
-        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 10</div>
+            <img src="b1.jpg" style="width:100%">
 
-        <div class="content">
-            <img src="c15.jpg" alt="Bear" style="width:100%">
-            <h3>New</h3>
-            <p>
-                <a href="https://atelierandrepairs.com/" target="_blank" title="new">>>>atelierandrepairs.com
-                    <<<</a>
-            </p>
-            <p>
-                <a href="https://www.instagram.com/atelierandrepairs/" target="_blank" title="new">>>>insta: atelierandrepairs
-                
-                    <<<</a>
-            </p>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 10</div>
+            <img src="b1-2.jpg" style="width:100%">
 
         </div>
 
-        <!-- END MAIN -->
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 10</div>
+            <img src="b1-1.jpg" style="width:100%">
+
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 10</div>
+            <img src="b2.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 10</div>
+            <img src="b2-3.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 10</div>
+            <img src="b2-1.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">7 / 10</div>
+            <img src="b3.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">8 / 10</div>
+            <img src="b4.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">9 / 10</div>
+            <img src="b5.jpg" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">10 / 10</div>
+            <img src="b6.jpg" style="width:100%">
+
+        </div>
+
     </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+        <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
+        <span class="dot" onclick="currentSlide(10)"></span>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
 
 </body>
 
