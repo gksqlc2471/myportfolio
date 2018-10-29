@@ -17,6 +17,9 @@
     body {
         font-family: "Lato", sans-serif;
     }
+    p{
+        font-size:25px;
+        }
 
     /* Style the tab */
     .tab {
@@ -151,27 +154,40 @@ text-align: left;
         <div id="article">
             <h2>About me</h2>
 
-            <p>Click on the buttons inside the tabbed menu:</p>
+        
 
             <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">장점</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">단점</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">관심사</button>
+                  <button class="tablinks" onclick="openCity(event, 'korea')">꿈</button>
             </div>
 
             <div id="London" class="tabcontent">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
+                <h3>장점</h3>
+                <p> 차별화,체력 두가지로 다른사람들과 일에 대해 다른생각으로 접근하고있습니다. 
+                    그리고 옷 입는것도 그 사람의 개성이라고 생각하여 남들과는 새롭게 좀 더 다르게 생각하고 중요하다고 생각합니다.
+                    평소 자기관리 또한 중요하다고 생각합니다. 꾸준히 운동하고 있으며 주말마다 친구들과 축구를 하며 체력을 관리합니다.</p>
             </div>
 
             <div id="Paris" class="tabcontent">
-                <h3>Paris</h3>
-                <p>Paris is the capital of France.</p>
+                <h3>단점</h3>
+                <p>쉽게 생각할 수 있는 것도 어렵게 생각하는 것 입니다.
+                    또한 급한 성격때문에 일을 빠르게 하려고 해서 빠뜨리는 부분을 점검하여 일을 더욱 신중하게 해야되는 부분이 있습니다.</p>
             </div>
 
             <div id="Tokyo" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <h3>관심사</h3>
+                <p>일본 여행이후 일본문화에 대해 관심이 생겨, 일본어(jpt)에 목표를 가지고 시험에 준비하고있습니다.</p>
+            </div>
+
+            <div id="korea" class="tabcontent">
+                <h3>목표</h3>
+                <p>현재 인터넷 쇼핑은 sns 홍보를 기반으로 쇼핑구조가 생겼습니다. 사람들은 매 순간 새로움을 추구하고 있으며 
+                    소셜미디어 (facebook, instagram, youtube)등 각 매체에서 서로 소통하면서 정보를 주고받고있으며, 상품구매에 많은 영향에 미치게 되었습니다.
+                    저 또한 사람들이 쉽게 접근 할 수있고 보기 좋은 웹 쇼핑몰을 만드는것이 목표입니다.
+
+                </p>
             </div>
 
             <script>
